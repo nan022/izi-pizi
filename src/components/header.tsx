@@ -127,25 +127,31 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="mt-4 md:hidden py-3 border-t border-border">
             <div className="flex flex-col space-y-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground font-medium py-2 hover:text-primary transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <a
-                href="https://wa.me/6282287034230"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 w-fit bg-primary text-primary-foreground font-semibold rounded-full text-sm hover:bg-primary/90 transition-colors flex items-center gap-2"
-              >
-                <Crown className="h-4 w-4" />
-                Gabung Pelajar Kaya
-              </a>
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                const isSubscribeMenu = item.id == "subscribe";
+                return (
+                    <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`flex gap-3 px-4 py-2 text-sm font-medium transition-colors 
+                        ${
+                            isActive
+                            ? "text-primary-foreground bg-primary/70 dark:bg-primary shadow-md rounded-full hover:text-primary-foreground"
+                            : "text-muted-foreground"
+                        }
+                        ${
+                            isSubscribeMenu
+                            ? "hover:scale-105 w-fit px-4 py-2 bg-primary/70 font-semibold rounded-full text-sm text-white dark:text-gray-900 transition-colors flex items-center gap-2"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    >
+                    {isSubscribeMenu && <Crown className="w-4 h-4 text-yellow-400" />}
+                    {item.name}
+                    </Link>
+                );
+                })}
             </div>
           </div>
         )}
