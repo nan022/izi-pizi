@@ -133,24 +133,6 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex gap-2">
             <ThemeToggle />
-            <div className="flex items-center gap-1 px-4 py-2">
-                <Crown className="h-4 w-4 text-yellow-400" />
-                <div className="flex -space-x-1">
-                    <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
-                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                        <AvatarFallback>CN</AvatarFallback>
-                    </Avatar>
-                    <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
-                        <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
-                        <AvatarFallback>LR</AvatarFallback>
-                    </Avatar>
-                    <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
-                        <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
-                        <AvatarFallback>ER</AvatarFallback>
-                    </Avatar>
-                </div>
-                <span className="text-xs font-medium text-primary">5000+</span>
-            </div>
             <Button size="sm" variant="outline">
               <Link href="/auth" className="flex justify-between items-center">
                 Masuk
