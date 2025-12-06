@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Crown, ContainerIcon } from "lucide-react";
+import { Crown, ContainerIcon, ArrowUpRight } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { Button } from "./ui/button";
+import DropDownKelas from "./nav-menu-kelas";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,10 +24,12 @@ export default function Header() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Kelas", href: "/kelas" },
+    { name: "", href: "/kelas", id: "kelas"},
     { name: "Analisis CV", href: "/analisis-cv" },
-    { name: "Gabung Pelajar Kaya", href: "/subscribe", id: "subscribe"},
+    { name: "Gabung Pasukan Koding", href: "/subscribe", id: "subscribe"},
   ];
+
+  const logos = "< Izi Pizi />";
 
   const pathname = usePathname();
 
@@ -38,48 +42,97 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center gap-2">
-            <ContainerIcon className="w-10 h-10" />
-            <span className="font-bold text-xl md:text-2xl text-foreground">
-              Izi Pizi
-            </span>
+        <div className="flex items-center w-full">
+          {/* Kiri: Logo */}
+          <div className="w-1/4 flex justify-start">
+            <div className="flex items-center gap-2">
+              <Link href="/" className="flex flex-row gap-2 items-center">
+                <ContainerIcon className="w-10 h-10" />
+                <span className="hidden md:block font-bold text-xl md:text-2xl text-foreground">
+                  {logos}
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-2">
-            <div className="flex gap-5 items-center bg-background/60 backdrop-blur-sm rounded-full border border-border p-1">
-              {navItems.map((item) => {
-                const isActive = pathname === item.href;
-                const isSubscribeMenu = item.id == "subscribe";
-                return (
-                    <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`flex gap-3 px-4 py-2 text-sm font-medium transition-colors 
-                        ${
-                            isActive
-                            ? "text-primary-foreground bg-primary/70 dark:bg-primary shadow-md rounded-full hover:text-primary-foreground"
-                            : "text-muted-foreground"
-                        }
-                        ${
-                            isSubscribeMenu
-                            ? "hover:scale-105 px-4 py-2 bg-primary/70 font-semibold rounded-full text-sm text-white dark:text-gray-900 transition-colors flex items-center gap-2"
-                            : "text-muted-foreground hover:text-foreground"
-                        }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                    >
-                    {isSubscribeMenu && <Crown className="w-4 h-4 text-yellow-400" />}
-                    {item.name}
-                    </Link>
-                );
-                })}
-            </div>
-          </nav>
+          <div className="w-1/2 flex justify-center">
+            <nav className="hidden md:flex items-center gap-2">
+              <div className="flex gap-5 items-center bg-background/60 backdrop-blur-sm rounded-full border border-border p-1">
+                {navItems.map((item) => {
+                  const isActive = pathname === item.href;
+                  const isSubscribeMenu = item.id == "subscribe";
+                  const isKelasMenu= item.id == "kelas";
+
+                  if (isKelasMenu) {
+                    return (
+                      <DropDownKelas
+                        key={item.id}
+                        isActive={pathname.startsWith('/kelas')}
+                      />
+                    );
+                  }
+
+                  return (
+                      <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`flex gap-3 px-4 py-2 text-sm font-medium transition-colors 
+                          ${
+                              isActive
+                              ? "text-primary-foreground bg-primary/70 dark:bg-primary shadow-md rounded-full hover:text-primary-foreground"
+                              : "text-muted-foreground"
+                          }
+                          ${
+                              isSubscribeMenu
+                              ? "bg-linear-to-r from-yellow-400 to-yellow-500 text-primary-foreground px-5 py-2.5 text-sm rounded-full shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-200 overflow-hidden border border-yellow-300/50"
+                              : "text-muted-foreground hover:text-foreground"
+                          }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      >
+                      {isSubscribeMenu && <Crown className="w-4 h-4 text-yellow-900" />}
+                      {item.name}
+                      </Link>
+                  );
+                  })}
+              </div>
+            </nav>
+          </div>
 
           {/* Desktop: CTA + Theme Toggle */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="w-1/4 flex justify-end">
+            <div className="hidden md:flex items-center gap-2">
+              <div className="flex items-center gap-1 px-4 py-2">
+                  <Crown className="h-4 w-4 text-yellow-900 dark:text-yellow-400" />
+                  <div className="flex -space-x-1">
+                      <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
+                          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                          <AvatarFallback>CN</AvatarFallback>
+                      </Avatar>
+                      <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
+                          <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
+                          <AvatarFallback>LR</AvatarFallback>
+                      </Avatar>
+                      <Avatar className="h-5 w-5 ring-2 ring-background grayscale">
+                          <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
+                          <AvatarFallback>ER</AvatarFallback>
+                      </Avatar>
+                  </div>
+                  <span className="text-xs font-medium text-primary">5000+</span>
+              </div>
+              <ThemeToggle />
+              <Button size="sm" variant="outline">
+                <Link href="/auth" className="flex justify-between items-center">
+                  Masuk
+                  <ArrowUpRight />
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex gap-2">
+            <ThemeToggle />
             <div className="flex items-center gap-1 px-4 py-2">
                 <Crown className="h-4 w-4 text-yellow-400" />
                 <div className="flex -space-x-1">
@@ -96,18 +149,18 @@ export default function Header() {
                         <AvatarFallback>ER</AvatarFallback>
                     </Avatar>
                 </div>
-                <span className="text-xs font-medium text-primary">100+</span>
+                <span className="text-xs font-medium text-primary">5000+</span>
             </div>
-            <ThemeToggle />
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex gap-2">
-            <ThemeToggle />
+            <Button size="sm" variant="outline">
+              <Link href="/auth" className="flex justify-between items-center">
+                Masuk
+                <ArrowUpRight />
+              </Link>
+            </Button>
             <button
-                className="md:hidden text-foreground"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label="Toggle menu"
+              className="md:hidden text-foreground"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
             >
                 <svg
                 className="w-6 h-6"
@@ -133,6 +186,17 @@ export default function Header() {
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 const isSubscribeMenu = item.id == "subscribe";
+                const isKelasMenu= item.id == "kelas";
+
+                if (isKelasMenu) {
+                  return (
+                    <DropDownKelas
+                      key={item.id}
+                      isActive={pathname.startsWith('/kelas')}
+                    />
+                  );
+                }
+
                 return (
                     <Link
                     key={item.name}
@@ -145,12 +209,12 @@ export default function Header() {
                         }
                         ${
                             isSubscribeMenu
-                            ? "hover:scale-105 w-fit px-4 py-2 bg-primary/70 font-semibold rounded-full text-sm text-white dark:text-gray-900 transition-colors flex items-center gap-2"
+                            ? "w-fit bg-linear-to-r from-yellow-400 to-yellow-500 text-primary-foreground px-5 py-2.5 text-sm rounded-full shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-200 overflow-hidden border border-yellow-300/50"
                             : "text-muted-foreground hover:text-foreground"
                         }`}
                     onClick={() => setMobileMenuOpen(false)}
                     >
-                    {isSubscribeMenu && <Crown className="w-4 h-4 text-yellow-400" />}
+                    {isSubscribeMenu && <Crown className="w-4 h-4 text-yellow-900" />}
                     {item.name}
                     </Link>
                 );

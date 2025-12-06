@@ -16,8 +16,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Izi Pizi - Belajar Jadi Izi!",
-  description: "Belajar Coding It's Izi",
+  title: "Izi Pizi - Belajar Coding Jadi Easy!",
+  description: "Belajar Coding Jadi Easy!",
 };
 
 export default function RootLayout({

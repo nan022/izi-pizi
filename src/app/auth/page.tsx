@@ -1,8 +1,7 @@
 // app/page.tsx
 "use client";
 
-import Header from "@/components/header";
-import Hero from "@/components/hero";
+import LoginForm from "@/components/login-form";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -18,8 +17,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <Header />
-      <Hero />
+      <LoginForm />
       <Particles
         className="absolute inset-0"
         quantity={100}

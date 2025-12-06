@@ -2,12 +2,13 @@
 "use client";
 
 import Header from "@/components/header";
-import Hero from "@/components/hero";
+import HeroKelas from "@/components/hero-kelas";
+import ListMateri from "@/components/list-materi-accord";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export default function Home() {
+export default function PageKelas() {
   const { resolvedTheme } = useTheme();
   const [particleColor, setParticleColor] = useState("#ffffff");
 
@@ -19,7 +20,8 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-background">
       <Header />
-      <Hero />
+      <HeroKelas />
+      <ListMateri />
       <Particles
         className="absolute inset-0"
         quantity={100}

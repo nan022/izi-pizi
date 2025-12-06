@@ -17,7 +17,7 @@ export default function Home() {
   }, [resolvedTheme]);
 
   return (
-    <div className="relative h-screen bg-background overflow-hidden">
+    <div className="relative min-h-screen bg-background">
       <Header />
       <Hero />
       <Particles
