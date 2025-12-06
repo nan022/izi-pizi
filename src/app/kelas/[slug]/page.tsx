@@ -19,17 +19,17 @@ export default function PageKelas() {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <Header />
-      <HeroKelas />
-      <ListMateri />
       <Particles
         className="absolute inset-0"
         quantity={100}
-        ease={80}
+        ease={20}
         staticity={50}
         color={particleColor}
         size={0.8}
       />
+      <Header />
+      <HeroKelas />
+      <ListMateri />
     </div>
   );
 }

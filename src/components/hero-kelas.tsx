@@ -1,14 +1,14 @@
 // src/components/HeroKelas.tsx
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SquareCode, Trophy, BookOpen, Annoyed, Crown } from "lucide-react";
+import { SquareCode, Crown } from "lucide-react";
 
 export default function HeroKelas() {
   const title = "Algoritma Pemrograman";
   const description =
     "Algoritma pemrograman adalah langkah-langkah logis yang disusun untuk menyelesaikan suatu masalah secara sistematis. Kelas ini membahas dasar logika pemrograman, struktur kontrol, fungsi, dan pendekatan pemecahan masalah yang menjadi fondasi semua bahasa pemrograman.";
   
-  const isPremium = true; // ganti jadi true untuk kelas premium
+  const isPremium = true;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

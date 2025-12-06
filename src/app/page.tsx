@@ -19,7 +19,6 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-background">
       <Header />
-      <Hero />
       <Particles
         className="absolute inset-0"
         quantity={100}
@@ -28,6 +27,7 @@ export default function Home() {
         color={particleColor}
         size={0.8}
       />
+      <Hero />
     </div>
   );
 }
