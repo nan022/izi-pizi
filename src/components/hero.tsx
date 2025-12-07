@@ -14,18 +14,18 @@ export default function Hero() {
           {logos}
         </h1>
         <p className="text-lg sm:text-xl text-muted-foreground max-w-md">
-          Belajar Coding Jadi <span className="font-semibold text-foreground">Easy!</span>
+          Belajar & Ngerti Coding Jadi <span className="font-semibold text-foreground">Easy!</span>
         </p>
         <Button
           size="lg"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 py-6 px-6 text-lg font-semibold group"
+          className="bg-linear-to-br from-gray-200 to-yellow-50 dark:from-gray-800 dark:to-gray-900 text-primary shadow-lg transform hover:scale-105 transition-all duration-300 py-6 px-6 text-lg font-semibold group"
           >
             <Link
               href="/auth"
               className="flex items-center gap-2"
             >
             Mulai Belajar
-            <ArrowUpRight className="ml-1 h-5 w-5 group-hover:translate-y-[-2px] group-hover:translate-x-[2px] transition-transform" />
+            <ArrowUpRight className="ml-1 h-5 w-5 group-hover:translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </Button>
         <div className="flex md:hidden items-center gap-1 px-4 py-2">

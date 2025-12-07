@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ContainerIcon } from "lucide-react";
+import { ContainerIcon, Eye, EyeOff } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -21,6 +21,7 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ export default function LoginForm() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center p-4">
-      <Card className="w-full max-w-sm">
+      <Card className="w-full max-w-sm bg-linear-to-br from-gray-200 to-yellow-50 dark:from-gray-800 dark:to-gray-900 shadow-lg">
         <CardHeader className="flex flex-col items-center text-center">
             <Link href="/">
                 <div className="flex items-center gap-2 mb-2">
@@ -40,7 +41,7 @@ export default function LoginForm() {
                 </div>
             </Link>
             <CardTitle>
-                Masuk ke Akun Anda
+                Masuk ke Akun Kamu
             </CardTitle>
             <CardDescription>
                 Masukkan email dan password untuk login
@@ -63,23 +64,34 @@ export default function LoginForm() {
 
             {/* Password */}
             <div className="grid gap-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Link
-                  href="/forgot-password"
-                  className="text-sm text-primary hover:underline"
+              <Label htmlFor="password">Password</Label>
+              <div className="relative">
+                <Input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Minimal 8 karakter"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  minLength={8}
+                  required
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="absolute right-0 top-0 h-full px-3 py-2 hover:bg-transparent"
+                  onClick={() => setShowPassword((prev) => !prev)}
                 >
-                  Lupa password?
-                </Link>
+                  {showPassword ? (
+                    <EyeOff className="h-4 w-4 text-muted-foreground" />
+                  ) : (
+                    <Eye className="h-4 w-4 text-muted-foreground" />
+                  )}
+                  <span className="sr-only">
+                    {showPassword ? "Sembunyikan password" : "Tampilkan password"}
+                  </span>
+                </Button>
               </div>
-              <Input
-                id="password"
-                type="password"
-                placeholder="*****"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
             </div>
 
             {/* Remember Me */}
@@ -90,7 +102,7 @@ export default function LoginForm() {
                 onCheckedChange={(checked) => setRememberMe(!!checked)}
               />
               <Label htmlFor="remember" className="text-sm">
-                Saya Pelupa Orangnya
+                Saya Pelupa
               </Label>
             </div>
 
@@ -131,7 +143,7 @@ export default function LoginForm() {
         <CardFooter className="flex justify-center">
           <p className="text-sm text-muted-foreground">
             Belum punya akun?{" "}
-            <Link href="/register" className="text-primary hover:underline font-medium">
+            <Link href="/auth/register" className="text-primary hover:underline font-medium">
               Daftar Aja Dulu
             </Link>
           </p>

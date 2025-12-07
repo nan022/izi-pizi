@@ -1,12 +1,12 @@
 // app/page.tsx
 "use client";
 
-import LoginForm from "@/components/login-form";
+import RegisterForm from "@/components/register-form";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export default function Auth() {
+export default function Register() {
   const { resolvedTheme } = useTheme();
   const [particleColor, setParticleColor] = useState("#ffffff");
 
@@ -26,7 +26,7 @@ export default function Auth() {
         size={0.8}
       />
       <div className="relative z-10">
-        <LoginForm />
+        <RegisterForm />
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ export default function ListMateri() {
               <AccordionItem
                 key={chapter.id}
                 value={chapter.id}
-                className="rounded-xl border border-border bg-linear-to-br from-yellow-50 to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
+                className="rounded-xl border border-border bg-linear-to-br from-gray-200 to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden"
               >
                 <AccordionTrigger className="px-5 py-4 text-left hover:no-underline group">
                   <div className="flex items-center gap-3 w-full">

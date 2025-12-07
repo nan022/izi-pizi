@@ -12,21 +12,21 @@ export default function HeroKelas() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <Card className="rounded-2xl border border-border/50 bg-linear-to-br from-yellow-50 to-gray-50 dark:from-gray-800 dark:to-gray-900 p-6 sm:p-8 shadow-lg">
+      <Card className="rounded-2xl border border-border/50 bg-linear-to-br from-gray-200 to-yellow-50 dark:from-gray-800 dark:to-gray-900 p-6 sm:p-8 shadow-lg">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div className="space-y-3">
             <div className="flex items-center gap-2">
-              <SquareCode className="h-6 w-6 text-yellow-400" />
-              <Badge
-                variant="outline"
-                className={`${
-                  isPremium && "border-yellow-400 text-primary"
-                } font-medium`}
-              >
+              <SquareCode className="h-6 w-6 text-yellow-500" />
+                <Badge
+                  variant="outline"
+                  className={`${
+                    isPremium && "border-yellow-500 text-primary"
+                  } font-medium`}
+                >
                 {isPremium && <>
-                                <Crown className="h-6 w-6 mr-1 text-yellow-500" />
-                                Pasukan Koding
-                              </>
+                  <Crown className="h-6 w-6 mr-1 text-yellow-500" />
+                    <span className="text-yellow-500">Premium</span>
+                  </>
                 }
               </Badge>
             </div>

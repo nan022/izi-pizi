@@ -118,7 +118,7 @@ export default function Header() {
                           <AvatarFallback>ER</AvatarFallback>
                       </Avatar>
                   </div>
-                  <span className="text-xs font-medium text-primary">5000+</span>
+                  <span className="text-xs font-medium text-primary">400+</span>
               </div>
               <ThemeToggle />
               <Button size="sm" variant="outline">

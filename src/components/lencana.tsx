@@ -8,7 +8,7 @@ import { Trophy, Star, Zap, GraduationCap, Flame, Medal } from "lucide-react";
 
 export default function Lencana() {
   return (
-    <Card className="border-0 bg-linear-to-br from-yellow-50 to-gray-50 dark:from-gray-800 dark:to-gray-900 shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl">
+    <Card className="border-0 bg-linear-to-br from-gray-200 to-yellow-50 dark:from-gray-800 dark:to-gray-900 shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-xl">
       <CardHeader className="text-center pb-2">
         <CardTitle className="text-2xl font-bold text-foreground">
           <Medal className="w-8 h-8 mx-auto mb-2 text-yellow-500 dark:text-yellow-400" />
