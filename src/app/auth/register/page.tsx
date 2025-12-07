@@ -1,6 +1,7 @@
 // app/page.tsx
 "use client";
 
+import Footer from "@/components/footer";
 import RegisterForm from "@/components/register-form";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useTheme } from "next-themes";
@@ -28,6 +29,8 @@ export default function Register() {
       <div className="relative z-10">
         <RegisterForm />
       </div>
+
+      <Footer />
     </div>
   );
 }

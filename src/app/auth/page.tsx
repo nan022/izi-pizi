@@ -1,6 +1,7 @@
 // app/page.tsx
 "use client";
 
+import Footer from "@/components/footer";
 import LoginForm from "@/components/login-form";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useTheme } from "next-themes";
@@ -28,6 +29,8 @@ export default function Auth() {
       <div className="relative z-10">
         <LoginForm />
       </div>
+
+      <Footer />
     </div>
   );
 }
