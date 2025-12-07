@@ -41,7 +41,7 @@ export default function RegisterForm() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center p-4">
-      <Card className="w-full max-w-lg bg-linear-to-br from-gray-200 to-yellow-50 dark:from-gray-800 dark:to-gray-900 shadow-lg">
+      <Card className="w-full max-w-md bg-linear-to-br from-gray-200 to-yellow-50 dark:from-gray-800 dark:to-gray-900 shadow-lg">
         <CardHeader className="flex flex-col items-center text-center">
           <Link href="/">
             <div className="flex items-center gap-2 mb-2">

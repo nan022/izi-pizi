@@ -1,8 +1,10 @@
 // app/page.tsx
 "use client";
 
+import Footer from "@/components/footer";
 import Header from "@/components/header";
-import Hero from "@/components/hero";
+import Pricing from "@/components/pricing";
+import Trusted from "@/components/trusted";
 import { Particles } from "@/components/ui/shadcn-io/particles";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -19,7 +21,6 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-background">
       <Header />
-      <Hero />
       <Particles
         className="absolute inset-0"
         quantity={100}
@@ -28,6 +29,12 @@ export default function Home() {
         color={particleColor}
         size={0.8}
       />
+      <div className="relative z-10">
+        <Pricing />
+        <Trusted />
+      </div>
+
+      <Footer />
     </div>
   );
 }

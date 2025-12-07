@@ -16,6 +16,18 @@ export default function Hero() {
         <p className="text-lg sm:text-xl text-muted-foreground max-w-md">
           Belajar & Ngerti Coding Jadi <span className="font-semibold text-foreground">Easy!</span>
         </p>
+        <p className="text-base sm:text-lg text-muted-foreground max-w-xl">
+          Materinya Pakai Bahasa Indonesia { " " }
+          <img
+            width="16"
+            height="16"
+            src="https://img.icons8.com/fluency/48/indonesia.png"
+            alt="Indonesia"
+            className="inline-block align-text-bottom"
+          />
+          { " " }
+          Jadi Cocok Buat Kamu!
+        </p>
         <Button
           size="lg"
           className="bg-linear-to-br from-gray-200 to-yellow-50 dark:from-gray-800 dark:to-gray-900 text-primary shadow-lg transform hover:scale-105 transition-all duration-300 py-6 px-6 text-lg font-semibold group"
