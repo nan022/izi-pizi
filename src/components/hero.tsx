@@ -16,17 +16,8 @@ export default function Hero() {
         <p className="text-lg sm:text-xl text-muted-foreground max-w-md">
           Belajar & Ngerti Coding Jadi <span className="font-semibold text-foreground">Easy!</span>
         </p>
-        <p className="text-base sm:text-lg text-muted-foreground max-w-xl">
-          Materinya Pakai Bahasa Indonesia { " " }
-          <img
-            width="16"
-            height="16"
-            src="https://img.icons8.com/fluency/48/indonesia.png"
-            alt="Indonesia"
-            className="inline-block align-text-bottom"
-          />
-          { " " }
-          Jadi Cocok Buat Kamu!
+        <p className="text-base sm:text-md text-muted-foreground max-w-xl">
+          Materinya Pakai Bahasa Indonesia Jadi Cocok Buat Kamu!
         </p>
         <Button
           size="lg"

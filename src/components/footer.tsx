@@ -4,7 +4,7 @@ export default function Footer() {
     <footer className="py-6 px-4 sm:px-6 lg:px-8 border-t border-border/30 bg-background">
       <div className="max-w-7xl mx-auto text-center text-sm text-muted-foreground">
         <p>
-          © {new Date().getFullYear()} izi pizi. Dibuat oleh Warga Negara Indonesia alias WNI{" "}
+          © {new Date().getFullYear()} izi pizi. Dibuat oleh Seorang WNI {" "}
           <img
             width="16"
             height="16"
@@ -12,6 +12,7 @@ export default function Footer() {
             alt="Indonesia"
             className="inline-block align-text-bottom"
           />{" "}
+          <a href="https://www.instagram.com/nandawithtech" className="hover:underline" target="_blank" rel="noopener noreferrer">@nandawithtech</a>
         </p>
       </div>
     </footer>
