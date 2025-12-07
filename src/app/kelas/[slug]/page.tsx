@@ -1,6 +1,7 @@
 // app/page.tsx
 "use client";
 
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeroKelas from "@/components/hero-kelas";
 import ListMateri from "@/components/list-materi-accord";
@@ -27,9 +28,12 @@ export default function PageKelas() {
         color={particleColor}
         size={0.8}
       />
-      <Header />
-      <HeroKelas />
-      <ListMateri />
+      <div className="relative z-10"> {/* ← wrapper dengan z-10 */}
+        <Header />
+        <HeroKelas />
+        <ListMateri />
+      </div>
+      <Footer />
     </div>
   );
 }

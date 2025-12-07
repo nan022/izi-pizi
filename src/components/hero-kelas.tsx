@@ -12,7 +12,7 @@ export default function HeroKelas() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <Card className="rounded-2xl border border-border/50 bg-linear-to-br from-background to-muted/30 p-6 sm:p-8 shadow-lg">
+      <Card className="rounded-2xl border border-border/50 bg-linear-to-br from-yellow-50 to-gray-50 dark:from-gray-800 dark:to-gray-900 p-6 sm:p-8 shadow-lg">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div className="space-y-3">
             <div className="flex items-center gap-2">

@@ -1,6 +1,7 @@
 // app/page.tsx
 "use client";
 
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import { Particles } from "@/components/ui/shadcn-io/particles";
@@ -28,6 +29,7 @@ export default function Home() {
         size={0.8}
       />
       <Hero />
+      <Footer />
     </div>
   );
 }
