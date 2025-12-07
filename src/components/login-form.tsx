@@ -64,7 +64,15 @@ export default function LoginForm() {
 
             {/* Password */}
             <div className="grid gap-2">
-              <Label htmlFor="password">Password</Label>
+              <div className="flex items-center justify-between">
+                <Label htmlFor="password">Password</Label>
+                <Link
+                  href="/auth/forgot-password"
+                  className="text-sm text-primary hover:underline"
+                >
+                  Lupa password?
+                </Link>
+              </div>
               <div className="relative">
                 <Input
                   id="password"
